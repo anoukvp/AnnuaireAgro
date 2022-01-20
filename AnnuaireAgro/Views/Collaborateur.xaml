@@ -1,0 +1,30 @@
+﻿<Page x:Class="AnnuaireAgro.Views.Collaborateur"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:Views="clr-namespace:AnnuaireAgro.Views"
+      
+   
+      Title="Collaborateur">
+
+    <Grid Background="#FF040423" Margin="0,0,10,0">
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="176*"/>
+            <ColumnDefinition Width="433*"/>
+            <ColumnDefinition Width="181*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="77*"/>
+        </Grid.RowDefinitions>
+
+
+        <Label Content="Liste des Collaborateurs" Grid.Row="0" Foreground="White" Margin="23,20,23,377" Grid.RowSpan="2"/>
+        <TextBox Grid.Row="0" Text="" TextWrapping="Wrap" Margin="52,22,189,21" Grid.Column="1"/>
+        <Button Content="Rechercher" Grid.Row="0" Margin="279,20,68,19" Grid.Column="1" MaxHeight="65" MaxWidth="80" Background="#FF184E57" Foreground="#FFDADADA"/>
+        <ListBox Grid.Row="1" Background="#FF0E162E"/>
+
+        <Views:ucCollaborateur  Grid.Row="1" Grid.Column="1" DataContext="{Binding CollaborateurSelected}"  ></Views:ucCollaborateur>
+
+    </Grid>
+</Page>
