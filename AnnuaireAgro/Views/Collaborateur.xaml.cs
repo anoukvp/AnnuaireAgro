@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AnnuaireAgro.Models;
 
 namespace AnnuaireAgro.Views
 {
@@ -23,6 +24,9 @@ namespace AnnuaireAgro.Views
         public Collaborateur()
         {
             InitializeComponent();
+            this.DataContext = new ViewModels.CollaborateurViewModel();
         }
+
+       
     }
 }

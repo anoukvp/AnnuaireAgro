@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AnnuaireAgro.Services
 {
-    class ServiceService
+    public class ServiceService
     {
         #region Singleton
 
@@ -46,7 +46,85 @@ namespace AnnuaireAgro.Services
             return lst;
         }
 
+        public Service Enregistrer(Service service)
+        {
 
+            using (AnnuaireContext context = new AnnuaireContext())
+
+                if (service.Id == 0)
+                {
+                    //création
+                    if (service.GetType() == typeof(Service))
+
+                    {
+                        context.Service.Add(service as Service);
+                    }
+
+                    else
+
+                    {
+
+                    }
+
+
+                }
+                else
+                {
+                    //modification
+                    if (service.GetType() == typeof(Service))
+
+                    {
+                        context.Service.Update(service as Service);
+                    }
+                    else
+
+                    {
+
+                    }
+
+                    context.SaveChanges();
+
+                }
+
+
+
+            return service;
+
+
+
+        }
+
+        public bool Supprimer(Service service)
+        {
+
+            using (AnnuaireContext context = new AnnuaireContext())
+            {
+
+                if (service.Id > 0)
+                {
+                    //Suppression
+                    if (service.GetType() == typeof(Service))
+
+                    {
+                        context.Service.Remove(service as Service);
+                    }
+
+                    else
+
+                    {
+
+                    }
+
+                }
+
+                context.SaveChanges();
+
+                return true;
+
+            }
+
+
+        }
 
 
     }

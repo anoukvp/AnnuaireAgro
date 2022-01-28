@@ -4,27 +4,51 @@
          xmlns:Views="clr-namespace:AnnuaireAgro.Views"
       
    
-      Title="Collaborateur">
+      Title="Collaborateur" HorizontalAlignment="Center">
 
-    <Grid Background="#FF040423" Margin="0,0,10,0">
-        
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="176*"/>
-            <ColumnDefinition Width="433*"/>
-            <ColumnDefinition Width="181*"/>
-        </Grid.ColumnDefinitions>
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="13*"/>
-            <RowDefinition Height="77*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+         
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MinWidth="100"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <!--Barres de Recherche-->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2" 
+                    HorizontalAlignment="Center" Margin="0,0,0,40" VerticalAlignment="Center">
+            <TextBlock Text=" Nom" VerticalAlignment="Center" Margin="5" Foreground="White"/>
+            <TextBox Text="{Binding CollaborateurFilter, UpdateSourceTrigger=PropertyChanged}" Width="100" VerticalAlignment="Center"/>
+            <TextBlock Text=" Site" VerticalAlignment="Center" Margin="5" Foreground="White"/>
+            <TextBox  Width="100" VerticalAlignment="Center"/>
+            <TextBlock Text="Fonction" VerticalAlignment="Center" Margin="5" Foreground="White"/>
+            <TextBox Width="100" VerticalAlignment="Center"/>
+        </StackPanel>
 
-        <Label Content="Liste des Collaborateurs" Grid.Row="0" Foreground="White" Margin="23,20,23,377" Grid.RowSpan="2"/>
-        <TextBox Grid.Row="0" Text="" TextWrapping="Wrap" Margin="52,22,189,21" Grid.Column="1"/>
-        <Button Content="Rechercher" Grid.Row="0" Margin="279,20,68,19" Grid.Column="1" MaxHeight="65" MaxWidth="80" Background="#FF184E57" Foreground="#FFDADADA"/>
-        <ListBox Grid.Row="1" Background="#FF0E162E"/>
+        <!--Liste des collaboraterus et commande pour le Binding permettant la liaison des données-->
+        <ListBox  Grid.Column="0" Grid.Row="1"  Grid.RowSpan="2"
+                 IsSynchronizedWithCurrentItem="True"
+                 Name ="lbCollaborateur"
+                ItemsSource="{Binding CollaborateurCollectionView}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Text="{Binding Nom}"></TextBlock>
+                        <TextBlock Text="{Binding Prenom}" Margin=" 10 0 0 0 "></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
-        <Views:ucCollaborateur  Grid.Row="1" Grid.Column="1" DataContext="{Binding CollaborateurSelected}"  ></Views:ucCollaborateur>
+        <Views:ucCollabAdmin Grid.Row="1" Grid.Column="2" DataContext="{Binding CollaborateurSelected}"/>
+
+      
 
     </Grid>
+
+
 </Page>

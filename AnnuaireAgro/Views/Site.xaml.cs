@@ -23,6 +23,7 @@ namespace AnnuaireAgro.Views
         public Site()
         {
             InitializeComponent();
+            this.DataContext = new ViewModels.SiteViewModel();
         }
     }
 }

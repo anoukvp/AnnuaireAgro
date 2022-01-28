@@ -17,11 +17,26 @@ namespace AnnuaireAgro
     /// <summary>
     /// Logique d'interaction pour MainWindowAdmin.xaml
     /// </summary>
-    public partial class MainWindowAdmin : Window
+    public partial class MainWindowAdmin : Page
     {
         public MainWindowAdmin()
         {
             InitializeComponent();
         }
+        private void Collaborateur_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Views.Collaborateur();
+        }
+        private void Sites_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Views.Site();
+        }
+
+        private void Services_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Views.Service();
+
+        }
+
     }
 }

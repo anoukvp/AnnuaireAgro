@@ -1,124 +1,120 @@
-﻿//using AnnuaireAgro.Models;
-//using System;
-//using System.Collections.Generic;
-//using System.Collections.ObjectModel;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
+﻿using AnnuaireAgro.Models;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Data;
+using System.Windows.Input;
 
-//namespace AnnuaireAgro.ViewModels
-//{
-//    class SiteViewModel : ViewModelBase
-//    {
+namespace AnnuaireAgro.ViewModels
+{
+    class SiteViewModel : ViewModelBase
+    {
 
-//        public ObservableCollection<Site> ListeContacts { get; }
+        public ObservableCollection<Site> ListeSites { get; }
 
-//        //vue permettant de naviguer dans la liste des contacts (filtre, tri, sélection courante)
-//        private readonly ICollectionView collectionView;
+        //vue permettant de naviguer dans la liste des contacts (filtre, tri, sélection courante)
+        private readonly ICollectionView collectionView;
 
-//        //l'élément courant sélectionné dans la vue
-//        public Contact ContactSelected
-//        {
-//            get
-//            {
-//                return collectionView.CurrentItem as Contact;
-//            }
-//        }
-
-
-//        public ListeViewModel()
-//        {
-//            //recupère la liste brut du modèle
-//            List<Contact> lst = Services.ContactsService.Instance.ChargerContacts();
-
-//            //initialise la liste observable
-//            ListeContacts = new ObservableCollection<Contact>();
-//            foreach (Contact item in lst)
-//            {
-//                ListeContacts.Add(item);
-//            }
-
-//            //définition de la collection view
-//            collectionView = CollectionViewSource.GetDefaultView(ListeContacts);
-
-//            //déclarattion de l'événemt de changement de sélection dans la vue
-//            collectionView.CurrentChanged += CollectionView_CurrentChanged;
-//        }
-
-//        private void CollectionView_CurrentChanged(object sender, EventArgs e)
-//        {
-//            NotifyPropertyChanged("ContactSelected");
-//        }
-
-//        public void NewClient()
-//        {
-//            //créer le nouveau client
-//            Client newcli = new Client();
-//            //l'ajouter à la liste
-//            ListeContacts.Add(newcli);
-//            //avertit la vue que la liste a changé
-//            NotifyPropertyChanged("ListeContacts");
-//            //se positionne sur le dernier élément créé dans la liste
-//            collectionView.MoveCurrentToLast();
-//        }
-
-//        private ICommand newAmiCommand;
-//        public ICommand NewAmiCommand
-//        {
-//            get
-//            {
-//                if (newAmiCommand == null)
-//                {
-//                    newAmiCommand = new RelayCommand(NewAmi);
-//                }
-//                return newAmiCommand;
-//            }
-//        }
-
-//        public void NewAmi()
-//        {
-//            //créer le nouveau ami
-//            Ami newcli = new Ami();
-//            //l'ajouter à la liste
-//            ListeContacts.Add(newcli);
-//            //avertit la vue que la liste a changé
-//            NotifyPropertyChanged("ListeContacts");
-//            //se positionne sur le dernier élément créé dans la liste
-//            collectionView.MoveCurrentToLast();
-//        }
+        //l'élément courant sélectionné dans la vue
+        public Site SiteSelected
+        {
+            get
+            {
+                return collectionView.CurrentItem as Site;
+            }
+        }
 
 
+        public SiteViewModel()
+        {
+            //recupère la liste brut du modèle
+            List<Site> lst = Services.SiteService.Instance.ChargerSite();
 
-//        private ICommand saveCommand;
-//        public ICommand SaveCommand
-//        {
-//            get
-//            {
-//                if (saveCommand == null)
-//                    saveCommand = new RelayCommand(() =>
-//                    {
-//                        Services.ContactsService.Instance.Enregistrer(ContactSelected);
-//                    });
-//                return saveCommand;
-//            }
-//        }
+            //initialise la liste observable
+            ListeSites = new ObservableCollection<Site>();
+            foreach (Site item in lst)
+            {
+                ListeSites.Add(item);
+            }
 
-//        private ICommand deleteCommand;
-//        public ICommand DeleteCommand
-//        {
-//            get
-//            {
-//                if (deleteCommand == null)
-//                    deleteCommand = new RelayCommand(() =>
-//                    {
-//                        Services.ContactsService.Instance.Supprimer(ContactSelected);
-//                        //mettre à jour la liste !
-//                        ListeContacts.Remove(ContactSelected);
-//                        NotifyPropertyChanged("ListeContacts");
-//                    });
-//                return deleteCommand;
-//            }
-//        }
+            //définition de la collection view
+            collectionView = CollectionViewSource.GetDefaultView(ListeSites);
 
-//    }
-//}
+            //déclarattion de l'événemt de changement de sélection dans la vue
+            collectionView.CurrentChanged += CollectionView_CurrentChanged;
+        }
+
+        private void CollectionView_CurrentChanged(object sender, EventArgs e)
+        {
+            NotifyPropertyChanged("SiteSelected");
+        }
+
+        public void NewSite()
+        {
+            //créer le nouveau salarié
+            Site newSite = new Site();
+
+            //l'ajouter à la liste
+            ListeSites.Add(newSite);
+            //avertir la vue que la liste a changé
+            NotifyPropertyChanged("ListeSites");
+            //on se positionne sur le dernier élément créé dans la liste
+            collectionView.MoveCurrentToLast();
+
+        }
+
+        // Différentes commandes qui vont nous servir pour le CRUD
+
+        private ICommand newSiteCommand;
+        public ICommand NewSiteCommand
+        {
+            get
+            {
+                if (newSiteCommand == null)
+                {
+                    newSiteCommand = new RelayCommand(NewSite);
+                }
+                return NewSiteCommand;
+            }
+        }
+
+        private ICommand saveCommand;
+
+        public ICommand SaveCommand
+        {
+            get
+            {
+                if (saveCommand == null)
+                    saveCommand = new RelayCommand(() =>
+                    {
+                        Services.SiteService.Instance.Enregistrer(SiteSelected);
+
+                    });
+                return saveCommand;
+            }
+
+        }
+
+        private ICommand deleteCommand;
+        public ICommand DeleteCommand
+        {
+            get
+            {
+                if (deleteCommand == null)
+                    deleteCommand = new RelayCommand(() =>
+                    {
+                        Services.SiteService.Instance.Supprimer(SiteSelected);
+                        //mettre à jour la liste !
+                        ListeSites.Remove(SiteSelected);
+                        NotifyPropertyChanged("ListeSites");
+                    });
+                return deleteCommand;
+            }
+        }
+
+    }
+}

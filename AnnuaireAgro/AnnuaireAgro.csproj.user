@@ -13,13 +13,25 @@
     <Compile Update="Views\Collaborateur.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\CollaborateurAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Service.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Site.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\ucCollabAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ucCollaborateur.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ucService.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ucSite.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -33,13 +45,25 @@
     <Page Update="Views\Collaborateur.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\CollaborateurAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\Service.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Site.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\ucCollabAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\ucCollaborateur.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ucService.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ucSite.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

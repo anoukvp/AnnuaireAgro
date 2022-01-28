@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AnnuaireAgro.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,26 @@ namespace AnnuaireAgro.Views
         public ucCollaborateur()
         {
             InitializeComponent();
+            RemplirTxtSite();
         }
+
+        private void RemplirTxtSite()
+        {
+
+            var cnn = new AnnuaireContext();
+
+            //var value = Convert.ToInt32();
+
+            var res = (from c in cnn.Collaborateur
+                       join s in cnn.Service on c.FK_idService equals s.Id
+                       join si in cnn.Site on c.FK_idSite equals si.Id
+                       //where c.Id == value
+                       select s.Nom ).FirstOrDefault();
+
+            txtSite.Text = res;
+
+
+        }
+
     }
 }

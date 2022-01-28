@@ -17,19 +17,8 @@ namespace AnnuaireAgro.Models
 
         //Paramètrage de la DB locale
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-         => optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\DEV\AnnuaireAgro\Data\AnnuaireDB.mdf;Integrated Security=True");
+         => optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=AnnuaireAgro;Integrated Security=True");
 
-
-        // Determine les relations (cardinalités) entre les entités
-       protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Collaborateur>(entity =>
-            {
-                entity.HasOne(a => a.Service).WithMany(b => b.Collaborateur);
-                entity.HasOne(c => c.Site).WithMany(d => d.Collaborateur);
-            });
-            
-        }
-     
+       
     }
 }

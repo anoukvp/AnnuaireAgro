@@ -1,36 +1,38 @@
 ﻿<Page x:Class="AnnuaireAgro.Views.Site"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:AnnuaireAgro.Views"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+     xmlns:Views="clr-namespace:AnnuaireAgro.Views"
       Title="Site">
-    <Grid Background="#FF040423" Margin="0,0,96,0">
+    <Grid Background="#FF040423" Height="378" Width="500">
         <Grid.RowDefinitions>
-            <RowDefinition Height="68*"/>
-            <RowDefinition Height="405*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="61*"/>
+            <RowDefinition Height="18*"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-        <Menu Grid.Row="0" Grid.Column="0" Background="#FF184E57" >
 
-            <!--<MenuItem Foreground="White" FontSize="14px"  Padding="20" Margin="60 0 0 0"  Header="Collaborateur" Click="Collaborateur_Click" />
-            <MenuItem Foreground="White" FontSize="14px"  Padding="20" Margin="60 0 0 0"  Header="Sites" Click="Sites_Click" />
-            <MenuItem Foreground="White" FontSize="14px"  Padding="20" Margin="60 0 0 0"  Header="Services" Click="Services_Click" />-->
 
-        </Menu>
-        <DataGrid ItemsSource="{Binding ListeSites}"  Grid.Row="1" Margin="200,56,200,19" Background="#FFA5DCD5"/>
-        <Label Content="Liste des Sites" Grid.Row="1" Foreground="White" Margin="316,19,290,338" RenderTransformOrigin="0.5,0.5">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.804"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
+        <ListBox ItemsSource="{Binding ListeSites, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Ville" Grid.Row="1" Margin="30,37,15,2" Background="#FFA5DCD5"/>
+
+        <Label Content="Liste des Sites" Foreground="White" Margin="30,18,24,18" RenderTransformOrigin="0.5,0.5"/>
+
+        <Views:ucSite Grid.Row="1" Grid.Column="2" DataContext="{Binding SiteSelected}" Margin="10,10,12,26"/>
+
+        <!--Stack Pannel contenant les boutons pour le CRUD-->
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="2" 
+                    HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="25" Width="330">
+            <Button x:Name="newCollab" Content="Créer"  MinWidth="100" Margin="10,5,0,0" Background="#FF246887" Foreground="White"/>
+
+            <Button Content="Enregistrer" Command="{Binding SaveCommand}" MinWidth="100" Margin="10,5,0,0" Background="#FF246887" Foreground="White"/>
+            <Button Content="Supprimer" Command="{Binding DeleteCommand}" MinWidth="100" Margin="10,5,0,0" Background="#FF246887" Foreground="White"/>
+        </StackPanel>
+
 
     </Grid>
+
 </Page>

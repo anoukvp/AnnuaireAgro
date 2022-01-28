@@ -23,12 +23,10 @@ namespace AnnuaireAgro
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
-        private void Collaborateur_Click(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new Views.Collaborateur();
-        }
+ 
         private void Sites_Click(object sender, RoutedEventArgs e)
         {
             Main.Content = new Views.Site();
@@ -38,6 +36,29 @@ namespace AnnuaireAgro
         {
             Main.Content = new Views.Service();
 
+        }
+
+     
+    
+
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.LeftShift)
+            {
+               
+                txtbAccueil.Visibility = Visibility.Hidden;
+                logo.Visibility = Visibility.Hidden;
+                btnCollab.Visibility = Visibility.Hidden;
+                Main.Content = new MainWindowAdmin();
+            }
+        }
+
+        private void btnCollab_Click(object sender, RoutedEventArgs e)
+        {
+            txtbAccueil.Visibility = Visibility.Hidden;
+            logo.Visibility = Visibility.Hidden;
+            btnCollab.Visibility = Visibility.Hidden;
+            Main.Content = new Views.Collaborateur();
         }
     }
 }

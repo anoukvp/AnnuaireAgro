@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\DEV\AnnuaireAgro\App.xaml
-6-2102621990
+10201649210
 
-27841931246
+30-698173396
 21622808382
-MainWindow.xaml;MainWindowAdmin.xaml;Views\Collaborateur.xaml;Views\Service.xaml;Views\Site.xaml;Views\ucCollaborateur.xaml;
+MainWindow.xaml;MainWindowAdmin.xaml;Views\Collaborateur.xaml;Views\CollaborateurAdmin.xaml;Views\Service.xaml;Views\Site.xaml;Views\ucCollabAdmin.xaml;Views\ucCollaborateur.xaml;Views\ucService.xaml;Views\ucSite.xaml;
 
 True
 

@@ -8,35 +8,43 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="6*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
 
-        <Label Grid.Column="1" Grid.Row="1" Margin="0 20 0 0" Content="Nom" Foreground="White"/>
+
+            <Label Grid.Column="1" Grid.Row="1" Margin="0 20 0 0" Content="Nom" Foreground="White"/>
         <Label Grid.Column="1" Grid.Row="2" Margin="0 20 0 0" Content="Prénom" Foreground="White" />
-        <Label Grid.Column="1" Grid.Row="3" Margin="0 20 0 0" Content="Téléphone Fixe" Foreground="White"/>
-        <Label Grid.Column="1" Grid.Row="4" Margin="0 20 0 0" Content="Téléphone Portable" Foreground="White"/>
+        <Label Grid.Column="1" Grid.Row="3" Margin="0 20 0 0" Content="Fixe" Foreground="White"/>
+        <Label Grid.Column="1" Grid.Row="4" Margin="0 20 0 0" Content="Portable" Foreground="White"/>
         <Label Grid.Column="1" Grid.Row="5" Margin="0 20 0 0" Content="Email" Foreground="White"/>
-      
+        <Label Grid.Column="1" Grid.Row="6" Margin="0 20 0 0" Content="Site" Foreground="White"/>
+        <Label Grid.Column="1" Grid.Row="7" Margin="0 20 0 0" Content="Service" Foreground="White"/>
+
+
         <TextBox Grid.Column="2" Grid.Row="1" Margin="0 20 0 0" Text="{Binding Nom, UpdateSourceTrigger=PropertyChanged}" />
         <TextBox Grid.Column="2" Grid.Row="2" Margin="0 20 0 0" Text="{Binding Prenom, UpdateSourceTrigger=PropertyChanged}" />
-        <TextBox Grid.Column="2" Grid.Row="3" Margin="0 20 0 0" Text="{Binding TelFixe}" />
-        <TextBox Grid.Column="2" Grid.Row="4" Margin="0 20 0 0" Text="{Binding TelPortable}" />
-        <TextBox Grid.Column="2" Grid.Row="5" Margin="0 20 0 0" Text="{Binding Email}" />
+        <TextBox Grid.Column="2" Grid.Row="3" Margin="0 20 0 0" Text="{Binding TelFixe, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Grid.Column="2" Grid.Row="4" Margin="0 20 0 0" Text="{Binding TelPortable, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Grid.Column="2" Grid.Row="5" Margin="0 20 0 0" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox x:Name="txtSite"   Text="{Binding Site.Ville, UpdateSourceTrigger=PropertyChanged}" Grid.Column="2" Grid.Row="6" Margin="0 20 0 0"  />
+        <TextBox x:Name="txtService" Text="{Binding Service.Nom, UpdateSourceTrigger=PropertyChanged}"  Grid.Column="2" Grid.Row="7" Margin="0 20 0 0" />
 
 
     </Grid>

@@ -39,23 +39,23 @@ namespace AnnuaireAgro.Migrations
                         .HasMaxLength(80)
                         .HasColumnType("nvarchar(80)");
 
-                    b.Property<int>("ServiceID")
+                    b.Property<int>("ServiceId")
                         .HasColumnType("int");
 
                     b.Property<int>("SiteId")
                         .HasColumnType("int");
 
-                    b.Property<int>("TelFixe")
+                    b.Property<string>("TelFixe")
                         .HasMaxLength(80)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(80)");
 
-                    b.Property<int>("TelPortable")
+                    b.Property<string>("TelPortable")
                         .HasMaxLength(20)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("IdCollaborateur");
 
-                    b.HasIndex("ServiceID");
+                    b.HasIndex("ServiceId");
 
                     b.HasIndex("SiteId");
 
@@ -100,7 +100,7 @@ namespace AnnuaireAgro.Migrations
                 {
                     b.HasOne("AnnuaireAgro.Models.Service", "Service")
                         .WithMany("Collaborateur")
-                        .HasForeignKey("ServiceID")
+                        .HasForeignKey("ServiceId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
