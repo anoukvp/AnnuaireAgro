@@ -16,10 +16,11 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
+        
+        
         <!--Barres de Recherche-->
         <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2" 
-                    HorizontalAlignment="Center" Margin="0,0,0,40" VerticalAlignment="Center">
+                    HorizontalAlignment="Center" Margin="0,0,0,10" VerticalAlignment="Center">
             <TextBlock Text=" Nom" VerticalAlignment="Center" Margin="5" Foreground="White"/>
             <TextBox Text="{Binding CollaborateurFilter, UpdateSourceTrigger=PropertyChanged}" Width="100" VerticalAlignment="Center"/>
             <TextBlock Text=" Site" VerticalAlignment="Center" Margin="5" Foreground="White"/>
@@ -43,7 +44,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
         
-        <Views:ucCollabAdmin Grid.Row="1" Grid.Column="2" DataContext="{Binding CollaborateurSelected}"/>
+        <Views:ucCollabAdmin Grid.Row="1" Grid.Column="2" DataContext="{Binding CollaborateurSelected}" Margin="0 0 0 10"/>
 
         <!--Stack Pannel contenant les boutons pour le CRUD-->
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="2" 

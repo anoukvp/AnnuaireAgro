@@ -24,6 +24,15 @@ namespace AnnuaireAgro.Views
         {
             InitializeComponent();
             this.DataContext = new ViewModels.SiteViewModel();
+            List<Models.Site> lst = Services.SiteService.Instance.ChargerSite();
+
+        }
+
+        private void new_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModels.SiteViewModel vm = this.DataContext as ViewModels.SiteViewModel;
+            vm.NewSite();
+
         }
     }
 }

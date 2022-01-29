@@ -53,7 +53,7 @@ namespace AnnuaireAgro.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AnnuaireAgro;V1.0.0.0;component/views/ucsite.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AnnuaireAgro;component/views/ucsite.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\ucSite.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

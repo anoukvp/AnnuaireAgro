@@ -12,18 +12,18 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="65*"/>
-            <RowDefinition Height="519*"/>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="541*"/>
         </Grid.RowDefinitions>
 
-        <TextBox HorizontalAlignment="Left" Height="35" Margin="10,10,0,0" VerticalAlignment="Top" Width="99" KeyDown="TextBox_KeyDown" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <TextBox HorizontalAlignment="Left" Height="35" Margin="10,0,0,0" VerticalAlignment="Center" Width="99" KeyDown="TextBox_KeyDown" Background="{x:Null}" BorderBrush="{x:Null}"/>
 
         <Image x:Name="logo" Source="C:\DEV\AnnuaireAgro\img\logo.png" Margin="322,9,15,362" Grid.Row="1"/>
 
 
 
-        <TextBlock x:Name="txtbAccueil" Text="Bienvenu(e), veuillez cliquer sur le bouton ci-dessous pour accèder à l'annuaire du personnel" TextAlignment="Center" TextWrapping="Wrap" Foreground="#FF50C1C1" Margin="0,195,0,227" Grid.Row="1" FontSize="24" HorizontalAlignment="Center" Width="566" Grid.ColumnSpan="2"></TextBlock>
-        <Frame x:Name="Main" Margin="10,65,10,32" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+        <TextBlock x:Name="txtbAccueil" Text="Bienvenu(e), veuillez cliquer sur le bouton ci-dessous pour accèder à l'annuaire du personnel" TextAlignment="Center" TextWrapping="Wrap" Foreground="#FF50C1C1" Margin="112,195,0,227" Grid.Row="1" FontSize="24" HorizontalAlignment="Left" Width="566" Grid.ColumnSpan="2"></TextBlock>
+        <Frame x:Name="Main" Margin="10,0,10,0" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2" Height="562" VerticalAlignment="Bottom" Grid.RowSpan="2" />
 
         <Button x:Name="btnCollab" Content="Collaborateurs" Background="#FF246887" Margin="335,313,28,165" Grid.Row="1" Foreground="#FFD2F1F0" FontSize="14" BorderBrush="#FF439C98" Click="btnCollab_Click"/>
 

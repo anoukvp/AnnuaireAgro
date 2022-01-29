@@ -37,12 +37,12 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <Label Content="Liste des Services" Foreground="White" Margin="100,14,99,16"/>
-        <Label HorizontalAlignment="Left" Content="Liste des collaborateurs associés au Service" Foreground="White" Margin="10,14,0,24" Grid.Column="2" Width="238"/>
+        <Label HorizontalAlignment="Left" Content="Liste des collaborateurs associés au Service" Foreground="White"  Grid.Column="2" Width="238" Margin="20 0 20 0"/>
 
         <!--Stack Pannel contenant les boutons pour le CRUD-->
         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1" 
                     HorizontalAlignment="Center" Margin="0,0,0,40" VerticalAlignment="Center">
-            <Button x:Name="newCollab" Content="Créer" MinWidth="100" Margin="10,5,0,10" Background="#FF246887" Foreground="White"/>
+            <Button x:Name="new" Content="Créer" MinWidth="100" Margin="10,5,0,10" Background="#FF246887" Foreground="White" Click="new_Click"/>
 
             <Button Content="Enregistrer" Command="{Binding SaveCommand}" MinWidth="100" Margin="10,5,0,10" Background="#FF246887" Foreground="White"/>
             <Button Content="Supprimer" Command="{Binding DeleteCommand}" MinWidth="100" Margin="10,5,0,0" Background="#FF246887" Foreground="White"/>

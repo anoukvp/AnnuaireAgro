@@ -25,8 +25,15 @@ namespace AnnuaireAgro.Views
         {
             InitializeComponent();
             this.DataContext = new ViewModels.CollaborateurViewModel();
+            List<Models.Collaborateur> lst = Services.CollaborateurService.Instance.ChargerCollaborateur();
+
         }
 
-       
+        private void accueil_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow accueil = new MainWindow();
+           
+            accueil.Show();
+        }
     }
 }

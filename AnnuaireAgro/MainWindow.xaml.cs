@@ -49,7 +49,10 @@ namespace AnnuaireAgro
                 txtbAccueil.Visibility = Visibility.Hidden;
                 logo.Visibility = Visibility.Hidden;
                 btnCollab.Visibility = Visibility.Hidden;
-                Main.Content = new MainWindowAdmin();
+                //Main.Content = new MainWindowAdmin();
+                MainWindowAdmin w = new MainWindowAdmin();
+                this.Hide();
+                w.ShowDialog();
             }
         }
 

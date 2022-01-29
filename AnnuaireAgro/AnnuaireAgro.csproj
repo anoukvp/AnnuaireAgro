@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="img\home.jfif" />
     <None Remove="img\logo.png" />
   </ItemGroup>
 

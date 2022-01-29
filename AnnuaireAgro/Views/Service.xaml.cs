@@ -29,6 +29,13 @@ namespace AnnuaireAgro.Views
 
         }
 
+
+
+
+
+
+
+
         private void remplirServices()
         {
             var cnn = new AnnuaireContext();
@@ -38,9 +45,24 @@ namespace AnnuaireAgro.Views
                                          select new {s.Id, s.Nom }).ToList();
         }
 
+
+
+
+
+
+
+
+
         private void ListeServices_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
            // requeteServices();
+        }
+
+        private void new_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModels.ServiceViewModel vm = this.DataContext as ViewModels.ServiceViewModel;
+            vm.NewService();
+
         }
 
         //private void requeteServices()

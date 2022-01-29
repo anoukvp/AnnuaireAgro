@@ -17,7 +17,7 @@ namespace AnnuaireAgro
     /// <summary>
     /// Logique d'interaction pour MainWindowAdmin.xaml
     /// </summary>
-    public partial class MainWindowAdmin : Page
+    public partial class MainWindowAdmin : Window
     {
         public MainWindowAdmin()
         {
@@ -38,5 +38,11 @@ namespace AnnuaireAgro
 
         }
 
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow accueil = new MainWindow();
+            this.Hide();
+            accueil.Show();
+        }
     }
 }

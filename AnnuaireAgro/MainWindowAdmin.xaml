@@ -1,4 +1,4 @@
-﻿<Page x:Class="AnnuaireAgro.MainWindowAdmin"
+﻿<Window x:Class="AnnuaireAgro.MainWindowAdmin"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 
@@ -7,12 +7,9 @@
     <Grid Background="#FF040423" Margin="0,0,10,0">
 
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="71*"/>
-            <RowDefinition Height="729*"/>
-        </Grid.RowDefinitions>
+        <Image Source="C:\DEV\AnnuaireAgro\img\home.png" Margin="137,14,736,717" MouseDown="Image_MouseDown"></Image>
 
-        <Menu HorizontalAlignment="Center" Background="#FF184E57" VerticalAlignment="Center" Height="71" Width="483" >
+        <Menu HorizontalAlignment="Center" Background="#FF184E57" VerticalAlignment="Top" Height="72" Width="482" >
 
             <MenuItem Foreground="White" FontSize="14px"  Padding="20" Margin="20 0 0 0"  Header="Collaborateur" Click="Collaborateur_Click" />
             <MenuItem Foreground="White" FontSize="14px"  Padding="20" Margin="60 0 20 0"  Header="Sites" Click="Sites_Click" />
@@ -20,11 +17,11 @@
         </Menu>
 
 
-        <Frame Grid.Row="1" x:Name="Main" Margin="22,10,22,30"/>
+        <Frame x:Name="Main" Margin="0,72,22,0" NavigationUIVisibility="Hidden"/>
 
     </Grid>
 
-</Page>
+</Window>
 
 
 

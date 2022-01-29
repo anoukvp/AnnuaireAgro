@@ -26,7 +26,7 @@
         <!--Stack Pannel contenant les boutons pour le CRUD-->
         <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="2" 
                     HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="25" Width="330">
-            <Button x:Name="newCollab" Content="Créer"  MinWidth="100" Margin="10,5,0,0" Background="#FF246887" Foreground="White"/>
+            <Button x:Name="new" Content="Créer"  MinWidth="100" Margin="10,5,0,0" Background="#FF246887" Foreground="White" Click="new_Click"/>
 
             <Button Content="Enregistrer" Command="{Binding SaveCommand}" MinWidth="100" Margin="10,5,0,0" Background="#FF246887" Foreground="White"/>
             <Button Content="Supprimer" Command="{Binding DeleteCommand}" MinWidth="100" Margin="10,5,0,0" Background="#FF246887" Foreground="White"/>

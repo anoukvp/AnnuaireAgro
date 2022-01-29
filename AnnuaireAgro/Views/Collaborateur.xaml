@@ -18,9 +18,10 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        <Button x:Name="accueil" Content="Accueil" Background="#FF246887" Click="accueil_Click" Margin="26,10,26,11" MaxHeight="30"></Button>
         <!--Barres de Recherche-->
         <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2" 
-                    HorizontalAlignment="Center" Margin="0,0,0,40" VerticalAlignment="Center">
+                    HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="0 5 0 10 ">
             <TextBlock Text=" Nom" VerticalAlignment="Center" Margin="5" Foreground="White"/>
             <TextBox Text="{Binding CollaborateurFilter, UpdateSourceTrigger=PropertyChanged}" Width="100" VerticalAlignment="Center"/>
             <TextBlock Text=" Site" VerticalAlignment="Center" Margin="5" Foreground="White"/>
@@ -44,7 +45,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <Views:ucCollabAdmin Grid.Row="1" Grid.Column="2" DataContext="{Binding CollaborateurSelected}"/>
+        <Views:ucCollabAdmin Grid.Row="1" Grid.Column="2" DataContext="{Binding CollaborateurSelected}" Margin="0 0 0 20"/>
 
       
 
