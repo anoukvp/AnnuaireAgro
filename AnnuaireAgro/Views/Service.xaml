@@ -4,6 +4,7 @@
       xmlns:Views="clr-namespace:AnnuaireAgro.Views"
       Title="Service">
 
+    <!--Définition des colonnes et lignes de la grille-->
     <Grid Background="#FF040423" Margin="0,0,10,-23" Height="507">
 
         <Grid.ColumnDefinitions>
@@ -19,11 +20,23 @@
             <RowDefinition Height="33*"/>
         </Grid.RowDefinitions>
 
+
+        <Label Content="Liste des Services" Foreground="White" Margin="100,14,99,16"/>
+        <ListBox x:Name="ListeServices" ItemsSource="{Binding ListeService}" Margin="56,19,55,11" Background="#FFA5DCD5" Grid.Row="1">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Text="{Binding Nom}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+        </ListBox>
+
         <Views:ucService Grid.Column="1" DataContext="{Binding ServiceSelected}" Margin="17,35,16,264" Grid.Row="1"/>
 
 
-        <ListBox x:Name="ListeServices" DisplayMemberPath="Nom" Margin="56,19,55,11" Background="#FFA5DCD5" Grid.Row="1" SelectionChanged="ListeServices_SelectionChanged"/>
-        <ListBox x:Name="ListeServicesassoc"
+        <!--<ListBox x:Name="ListeServicesassoc"
                  Margin="49,19,35,7" Background="#FFA5DCD5" 
                  Grid.Column="2" Grid.Row="1">
             <ListBox.ItemTemplate>
@@ -35,16 +48,15 @@
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-        </ListBox>
-        <Label Content="Liste des Services" Foreground="White" Margin="100,14,99,16"/>
-        <Label HorizontalAlignment="Left" Content="Liste des collaborateurs associés au Service" Foreground="White"  Grid.Column="2" Width="238" Margin="20 0 20 0"/>
+        </ListBox>-->
+       
+        <!--<Label HorizontalAlignment="Left" Content="Liste des collaborateurs associés au Service" Foreground="White"  Grid.Column="2" Width="238" Margin="20 0 20 0"/>-->
 
         <!--Stack Pannel contenant les boutons pour le CRUD-->
         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1" 
                     HorizontalAlignment="Center" Margin="0,0,0,40" VerticalAlignment="Center">
             <Button x:Name="new" Content="Créer" MinWidth="100" Margin="10,5,0,10" Background="#FF246887" Foreground="White" Click="new_Click"/>
-
-            <Button Content="Enregistrer" Command="{Binding SaveCommand}" MinWidth="100" Margin="10,5,0,10" Background="#FF246887" Foreground="White"/>
+            <Button Content="Modifier" Command="{Binding SaveCommand}" MinWidth="100" Margin="10,5,0,10" Background="#FF246887" Foreground="White"/>
             <Button Content="Supprimer" Command="{Binding DeleteCommand}" MinWidth="100" Margin="10,5,0,0" Background="#FF246887" Foreground="White"/>
         </StackPanel>
 

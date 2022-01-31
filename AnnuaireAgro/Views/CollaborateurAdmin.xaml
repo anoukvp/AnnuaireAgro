@@ -4,36 +4,30 @@
        xmlns:Views="clr-namespace:AnnuaireAgro.Views"
        
    
-      Title="CollaborateurAdmin">
-    <Grid>
+      Title="CollaborateurAdmin" >
+
+
+    <!--Définition des colonnes et lignes de la grille-->
+
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" >
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="80"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" MinWidth="100"/>
+            <ColumnDefinition Width="38.963"/>
+            <ColumnDefinition Width="61.037"/>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
+            <!--<ColumnDefinition Width="Auto"/>-->
         </Grid.ColumnDefinitions>
-        
-        
-        <!--Barres de Recherche-->
-        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2" 
-                    HorizontalAlignment="Center" Margin="0,0,0,10" VerticalAlignment="Center">
-            <TextBlock Text=" Nom" VerticalAlignment="Center" Margin="5" Foreground="White"/>
-            <TextBox Text="{Binding CollaborateurFilter, UpdateSourceTrigger=PropertyChanged}" Width="100" VerticalAlignment="Center"/>
-            <TextBlock Text=" Site" VerticalAlignment="Center" Margin="5" Foreground="White"/>
-            <TextBox  Width="100" VerticalAlignment="Center"/>
-            <TextBlock Text="Fonction" VerticalAlignment="Center" Margin="5" Foreground="White"/>
-            <TextBox Width="100" VerticalAlignment="Center"/>
-        </StackPanel>
+
 
         <!--Liste des collaboraterus et commande pour le Binding permettant la liaison des données-->
         <ListBox  Grid.Column="0" Grid.Row="1"  Grid.RowSpan="2"
                  IsSynchronizedWithCurrentItem="True"
                  Name ="lbCollaborateur"
-                ItemsSource="{Binding CollaborateurCollectionView}">
+                ItemsSource="{Binding ListeCollaborateur}" Grid.ColumnSpan="2" Margin="0,0,0,80">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" >
@@ -43,13 +37,14 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        
-        <Views:ucCollabAdmin Grid.Row="1" Grid.Column="2" DataContext="{Binding CollaborateurSelected}" Margin="0 0 0 10"/>
+
+        <Views:ucCollabAdmin  Grid.Row="1" Grid.Column="2" DataContext="{Binding CollaborateurSelected}" Margin="0,0,0,10" Grid.ColumnSpan="2"/>
 
         <!--Stack Pannel contenant les boutons pour le CRUD-->
-        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="2" 
-                    HorizontalAlignment="Center" Margin="0,0,0,40" VerticalAlignment="Center">
-            <Button x:Name="newCollab" Content="Créer" Click="newCollab_Click"  MinWidth="100" Margin="10,5,0,0" Background="#FF246887" Foreground="White"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="3" 
+                    HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top">
+
+            <Button x:Name="newCollab" Content="Créer" Click="newCollab_Click"  Margin="10,5,0,0"  MinWidth="100" Background="#FF246887" Foreground="White" />
 
             <Button Content="Enregistrer" Command="{Binding SaveCommand}" MinWidth="100" Margin="10,5,0,0" Background="#FF246887" Foreground="White"/>
             <Button Content="Supprimer" Command="{Binding DeleteCommand}" MinWidth="100" Margin="10,5,0,0" Background="#FF246887" Foreground="White"/>

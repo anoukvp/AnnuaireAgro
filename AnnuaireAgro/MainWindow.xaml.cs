@@ -23,10 +23,13 @@ namespace AnnuaireAgro
         public MainWindow()
         {
             InitializeComponent();
+            //Services.ServiceService.Instance.Ensemencer();
+            //Services.SiteService.Instance.Ensemencer();
+           /// Services.CollaborateurService.Instance.saisirdonnees();
 
         }
 
- 
+
         private void Sites_Click(object sender, RoutedEventArgs e)
         {
             Main.Content = new Views.Site();
@@ -63,5 +66,7 @@ namespace AnnuaireAgro
             btnCollab.Visibility = Visibility.Hidden;
             Main.Content = new Views.Collaborateur();
         }
+
+
     }
 }

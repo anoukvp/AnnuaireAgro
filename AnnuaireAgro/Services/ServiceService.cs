@@ -40,7 +40,7 @@ namespace AnnuaireAgro.Services
             {
                 var lstServices = context.Service.ToList();
                 lst.AddRange(lstServices);
-                
+
             }
 
             return lst;
@@ -63,23 +63,7 @@ namespace AnnuaireAgro.Services
                     else
 
                     {
-
-                    }
-
-
-                }
-                else
-                {
-                    //modification
-                    if (service.GetType() == typeof(Service))
-
-                    {
                         context.Service.Update(service as Service);
-                    }
-                    else
-
-                    {
-
                     }
 
                     context.SaveChanges();
@@ -127,6 +111,19 @@ namespace AnnuaireAgro.Services
         }
 
 
+        public void Ensemencer()
+        {
+            using (AnnuaireContext context = new AnnuaireContext())
+            {
+                context.Service.Add(new Service { Nom = "Comptabilité" });
+                context.Service.Add(new Service { Nom = "Production" });
+                context.Service.Add(new Service { Nom = "Accueil" });
+                context.Service.Add(new Service { Nom = "Informatique" });
+                context.Service.Add(new Service { Nom = "Commercial" });
+                context.SaveChanges();
+            }
+
+        }
     }
 }
 

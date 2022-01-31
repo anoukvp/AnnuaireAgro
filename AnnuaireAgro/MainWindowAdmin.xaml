@@ -4,6 +4,7 @@
 
         Title="MainWindowAdmin" Height="800" Width="1000">
 
+
     <Grid Background="#FF040423" Margin="0,0,10,0">
 
 
@@ -17,7 +18,7 @@
         </Menu>
 
 
-        <Frame x:Name="Main" Margin="0,72,22,0" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="Main" Margin="0,77,0,0" NavigationUIVisibility="Hidden"/>
 
     </Grid>
 

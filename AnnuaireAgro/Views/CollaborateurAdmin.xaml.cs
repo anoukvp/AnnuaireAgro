@@ -23,6 +23,8 @@ namespace AnnuaireAgro.Views
         public CollaborateurAdmin()
         {
             InitializeComponent();
+            this.DataContext = new ViewModels.CollaborateurAdminViewModel();
+            List<Models.Collaborateur> lst = Services.CollaborateurService.Instance.ChargerCollaborateur();
         }
 
         private void newCollab_Click(object sender, RoutedEventArgs e)

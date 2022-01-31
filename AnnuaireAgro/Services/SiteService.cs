@@ -65,26 +65,11 @@ namespace AnnuaireAgro.Services
                     else
 
                     {
-
-                    }
-
-
-                }
-                else
-                {
-                    //modification
-                    if (site.GetType() == typeof(Models.Site))
-
-                    {
                         context.Site.Update(site as Models.Site);
                     }
-                    else
+         
 
-                    {
-
-                    }
-
-                    context.SaveChanges();
+                     context.SaveChanges();
 
                 }
 
@@ -127,5 +112,19 @@ namespace AnnuaireAgro.Services
 
 
         }
+
+        public void Ensemencer()
+        {
+            using (AnnuaireContext context = new AnnuaireContext())
+            {
+                context.Site.Add(new Models.Site {  Ville = "Paris" });
+                context.Site.Add(new Models.Site {  Ville = "Nantes" });
+                context.Site.Add(new Models.Site {  Ville = "Toulouse" });
+                context.Site.Add(new Models.Site {  Ville = "Nice" });
+                context.Site.Add(new Models.Site {  Ville = "Lille" });
+                context.SaveChanges();
+            }
+        }
+
     }
 }

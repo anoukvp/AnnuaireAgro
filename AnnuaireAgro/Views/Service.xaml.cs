@@ -25,38 +25,11 @@ namespace AnnuaireAgro.Views
         {
             InitializeComponent();
             this.DataContext = new ViewModels.ServiceViewModel();
-            remplirServices();
+            // List<Models.Service> lst = Services.ServiceService.Instance.ChargerService();
 
+          
         }
 
-
-
-
-
-
-
-
-        private void remplirServices()
-        {
-            var cnn = new AnnuaireContext();
-            var value = Convert.ToInt32(ListeServices.SelectedValue);
-
-            ListeServices.ItemsSource = (from s in cnn.Service
-                                         select new {s.Id, s.Nom }).ToList();
-        }
-
-
-
-
-
-
-
-
-
-        private void ListeServices_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-           // requeteServices();
-        }
 
         private void new_Click(object sender, RoutedEventArgs e)
         {
@@ -65,25 +38,11 @@ namespace AnnuaireAgro.Views
 
         }
 
-        //private void requeteServices()
-        //{
-        //    var cnn = new AnnuaireContext();
+  
 
-        //    var req = (from c in cnn.Collaborateur
-        //               join s in cnn.Service on c.FK_idService equals s.Id
-        //               where c.FK_idService == Convert.ToInt32(ListeServices.SelectedValue)
-        //               select new
-        //               {
-        //                   Id = c.Id,
-        //                   Nom = c.Nom,
-        //                   Prenom = c.Prenom
-        //               });
+     
+  
 
-
-
-        //    ListeServicesassoc.ItemsSource = new BindingListCollectionView<Collaborateur>(req.ToList());
-
-
-        //}
+        
     }
 }

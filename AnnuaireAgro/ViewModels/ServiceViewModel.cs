@@ -79,8 +79,7 @@ namespace AnnuaireAgro.ViewModels
             }
         }
 
-        private ICommand saveCommand; //propfull tab tab (plus détaillé que prop tab tab quand on veut modifier le get
-
+        private ICommand saveCommand; 
         public ICommand SaveCommand
         {
             get
@@ -96,7 +95,7 @@ namespace AnnuaireAgro.ViewModels
 
         }
 
-        private ICommand deleteCommand; //propfull tab tab (plus détaillé que prop tab tab quand on veut modifier le get
+        private ICommand deleteCommand; 
 
         public ICommand DeleteCommand
         {

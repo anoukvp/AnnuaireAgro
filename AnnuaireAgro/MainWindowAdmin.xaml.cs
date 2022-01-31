@@ -25,7 +25,7 @@ namespace AnnuaireAgro
         }
         private void Collaborateur_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Views.Collaborateur();
+            Main.Content = new Views.CollaborateurAdmin();
         }
         private void Sites_Click(object sender, RoutedEventArgs e)
         {

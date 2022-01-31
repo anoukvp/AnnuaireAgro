@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AnnuaireAgro.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,13 +27,17 @@ namespace AnnuaireAgro.Views
             this.DataContext = new ViewModels.SiteViewModel();
             List<Models.Site> lst = Services.SiteService.Instance.ChargerSite();
 
+
         }
 
-        private void new_Click(object sender, RoutedEventArgs e)
+
+    private void new_Click(object sender, RoutedEventArgs e)
         {
             ViewModels.SiteViewModel vm = this.DataContext as ViewModels.SiteViewModel;
             vm.NewSite();
 
         }
+
+      
     }
 }

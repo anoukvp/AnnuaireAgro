@@ -16,6 +16,8 @@ namespace AnnuaireAgro.Models
         [StringLength(80)]
         public string Nom { get; set; }
 
+        public ICollection<Collaborateur> Collaborateur { get; set; }
+
       
     }
 }

@@ -56,7 +56,7 @@ namespace AnnuaireAgro.ViewModels
             //Initialise la liste observable
             ListeCollaborateur = new ObservableCollection<Collaborateur>();
 
-          // On utiliser la collection pour la barre de recherche
+          // On utilise la collection pour la barre de recherche
             CollaborateurCollectionView = CollectionViewSource.GetDefaultView(ListeCollaborateur);
 
             CollaborateurCollectionView.Filter = FilterCollaborateur;
@@ -74,7 +74,7 @@ namespace AnnuaireAgro.ViewModels
             collectionView.CurrentChanged += CollectionView_CurrentChanged;
         }
 
-        //pour la barre de recherche
+        // barre de recherche
         private bool FilterCollaborateur(object obj)
         {
             if (obj is Collaborateur ListeCollaborateur)

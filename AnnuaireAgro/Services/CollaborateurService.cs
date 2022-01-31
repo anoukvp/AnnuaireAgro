@@ -62,26 +62,12 @@ namespace AnnuaireAgro.Services
                     }
 
                     else
-
-                    {
-                       
-                    }
-
-
-                }
-                else
-                {
-                    //modification
-                    if (collaborateur.GetType() == typeof(Collaborateur))
-
+                    // Update
                     {
                         context.Collaborateur.Update(collaborateur as Collaborateur);
                     }
-                    else
 
-                    {
-                      
-                    }
+
 
                     context.SaveChanges();
 
@@ -127,16 +113,16 @@ namespace AnnuaireAgro.Services
 
         }
 
-        //public void SaisirDonnees()
-        //{
-        //    using (AnnuaireContext ctx = new AnnuaireContext())
-        //    {
-        //        ctx.Collaborateur.Add(new Collaborateur { Nom = "GOLADE", Prenom = "Larry", TelFixe = "0123454345", TelPortable = "0666578795", Email = "larry.golade@gmail.com" });
-        //        ctx.Collaborateur.Add(new Collaborateur { Nom = "DUSTRIEL", Prenom = "Firmin", TelFixe = "0556678765", TelPortable = "0664345654", Email = "firmin.dustriel@gmail.com" });
-        //        ctx.Collaborateur.Add(new Collaborateur { Nom = "EMOI", Prenom = "Elise", TelFixe = "0445673456", TelPortable = "0668765432", Email = "elise.emoi@gmail.com" });
-        //        ctx.Collaborateur.Add(new Collaborateur { Nom = "CHABAT", Prenom = "Alain", TelFixe = "0559867463", TelPortable = "0668976345", Email = "alain.chabat@gmail.com" });
-        //        ctx.SaveChanges();
-        //    }
-        //}
+        public void saisirdonnees()
+        {
+            using (AnnuaireContext ctx = new AnnuaireContext())
+            {
+                ctx.Collaborateur.Add(new Collaborateur { Nom = "golade", Prenom = "larry", TelFixe = "0123454345", TelPortable = "0666578795", Email = "larry.golade@gmail.com", FK_idService =1 , FK_idSite = 1  });
+                ctx.Collaborateur.Add(new Collaborateur { Nom = "dustriel", Prenom = "firmin", TelFixe = "0556678765", TelPortable = "0664345654", Email = "firmin.dustriel@gmail.com", FK_idService = 2, FK_idSite = 2 });
+                ctx.Collaborateur.Add(new Collaborateur { Nom = "emoi", Prenom = "elise", TelFixe = "0445673456", TelPortable = "0668765432", Email = "elise.emoi@gmail.com", FK_idService = 3, FK_idSite = 2 });
+                ctx.Collaborateur.Add(new Collaborateur { Nom = "chabat", Prenom = "alain", TelFixe = "0559867463", TelPortable = "0668976345", Email = "alain.chabat@gmail.com", FK_idService = 4, FK_idSite = 3 });
+                ctx.SaveChanges();
+            }
+        }
     }
     }

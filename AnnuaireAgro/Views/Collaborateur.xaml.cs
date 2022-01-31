@@ -32,7 +32,7 @@ namespace AnnuaireAgro.Views
         private void accueil_Click(object sender, RoutedEventArgs e)
         {
             MainWindow accueil = new MainWindow();
-           
+            
             accueil.Show();
         }
     }

@@ -32,10 +32,14 @@ namespace AnnuaireAgro.Models
         [StringLength(160)]
         public string Email { get; set; }
 
+
         public int FK_idSite { get; set; }
+
+        public Site site { get; set; }
 
         public int FK_idService { get; set; }
 
+        public Service service { get; set;  }
 
 
 
